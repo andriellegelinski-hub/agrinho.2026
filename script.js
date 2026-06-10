@@ -1,1 +1,460 @@
 
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Futuro Verde | Consumo Consciente de Água</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            transition: all 0.2s ease;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f7f0;
+            color: #1a3b2f;
+            line-height: 1.5;
+            padding: 20px;
+        }
+
+        /* Estrutura de acessibilidade: tamanho de fonte base */
+        body {
+            font-size: 100%; /* 1rem = 16px padrão */
+        }
+
+        /* Classe para fonte aumentada */
+        body.font-large {
+            font-size: 120%;
+        }
+
+        /* Container principal */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 28px;
+            box-shadow: 0 20px 40px rgba(0, 40, 0, 0.08);
+            overflow: hidden;
+        }
+
+        /* Cabeçalho */
+        header {
+            background: linear-gradient(135deg, #1e4a2f, #0e3a22);
+            color: white;
+            padding: 2rem 2rem 1.5rem 2rem;
+            text-align: center;
+        }
+
+        .logo-area h1 {
+            font-size: 2.4rem;
+            letter-spacing: -0.5px;
+            margin-bottom: 0.5rem;
+        }
+
+        .logo-area p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        /* Botões acessibilidade */
+        .accessibility-bar {
+            display: flex;
+            justify-content: flex-end;
+            gap: 12px;
+            padding: 12px 24px;
+            background-color: #e9f5e9;
+            border-bottom: 1px solid #c8e0c8;
+        }
+
+        .access-btn {
+            background: #2c6e49;
+            color: white;
+            border: none;
+            padding: 6px 14px;
+            border-radius: 40px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 0.85rem;
+            transition: 0.2s;
+        }
+
+        .access-btn:hover {
+            background: #1d5236;
+            transform: scale(1.02);
+        }
+
+        /* Menu de navegação */
+        nav {
+            background-color: #fefefe;
+            padding: 0.8rem 2rem;
+            border-bottom: 1px solid #d4e2d4;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.8rem;
+            justify-content: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            font-weight: 600;
+            color: #1e562e;
+            padding: 5px 0;
+            border-bottom: 2px solid transparent;
+        }
+
+        nav a:hover {
+            border-bottom-color: #2c8c4a;
+        }
+
+        /* seções */
+        section {
+            padding: 2.5rem 2rem;
+            border-bottom: 1px solid #e0f0e0;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: #1b4d2b;
+            border-left: 6px solid #3b9e5c;
+            padding-left: 18px;
+        }
+
+        .text-content {
+            margin-bottom: 1.2rem;
+            text-align: justify;
+        }
+
+        /* Tabela de dados */
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background-color: #fafefa;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .data-table th, .data-table td {
+            border: 1px solid #cce3cc;
+            padding: 12px 10px;
+            text-align: center;
+        }
+
+        .data-table th {
+            background-color: #2c7840;
+            color: white;
+            font-weight: 600;
+        }
+
+        /* calculadora */
+        .calculator-box {
+            background: #e6f4ea;
+            border-radius: 28px;
+            padding: 1.8rem;
+            margin: 25px 0;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        .calculator-box label {
+            font-weight: bold;
+            font-size: 1.2rem;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .calculator-box input {
+            padding: 12px 16px;
+            font-size: 1rem;
+            width: 220px;
+            border: 2px solid #bcddbe;
+            border-radius: 48px;
+            text-align: center;
+            outline: none;
+        }
+
+        .calculator-box button {
+            background-color: #0f6e3a;
+            color: white;
+            border: none;
+            padding: 12px 28px;
+            font-size: 1rem;
+            border-radius: 40px;
+            margin-left: 12px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .calculator-box button:hover {
+            background-color: #0a522b;
+        }
+
+        .result-area {
+            margin-top: 20px;
+            font-weight: bold;
+            font-size: 1.2rem;
+            padding: 12px;
+            background: white;
+            border-radius: 48px;
+            display: inline-block;
+            width: auto;
+            min-width: 260px;
+        }
+
+        .alert-warning {
+            background-color: #ffe0b5;
+            border-left: 8px solid #e67e22;
+            padding: 12px 20px;
+            margin-top: 16px;
+            border-radius: 32px;
+            font-weight: 600;
+        }
+
+        /* lista de dicas */
+        .tips-list {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 18px;
+            margin-top: 1rem;
+        }
+
+        .tips-list li {
+            background: #f1f9f0;
+            padding: 12px 18px;
+            border-radius: 40px;
+            flex: 1 1 200px;
+            text-align: center;
+            font-weight: 500;
+            border: 1px solid #cde2cd;
+        }
+
+        footer {
+            background-color: #1b3b2a;
+            color: #cfebd4;
+            text-align: center;
+            padding: 1.5rem;
+            font-size: 0.9rem;
+        }
+
+        img {
+            max-width: 100%;
+            border-radius: 24px;
+            margin: 15px 0;
+            display: block;
+        }
+
+        /* textos alternativos são implementados via atributo alt */
+        .img-container {
+            background: #d9ead9;
+            border-radius: 28px;
+            padding: 10px;
+            text-align: center;
+        }
+
+        @media (max-width: 700px) {
+            section {
+                padding: 1.5rem;
+            }
+            .calculator-box input, .calculator-box button {
+                margin: 8px auto;
+                display: block;
+            }
+            nav {
+                gap: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Barra de acessibilidade -->
+    <div class="accessibility-bar">
+        <button class="access-btn" id="increaseFontBtn" aria-label="Aumentar tamanho da fonte">🔍 Aumentar Fonte</button>
+        <button class="access-btn" id="resetFontBtn" aria-label="Resetar fonte">⟳ Fonte padrão</button>
+    </div>
+
+    <header>
+        <div class="logo-area">
+            <h1>🌱 Futuro Verde</h1>
+            <p>Agro forte, futuro sustentável: equilíbrio entre produção e meio ambiente</p>
+        </div>
+    </header>
+
+    <nav aria-label="Menu principal">
+        <a href="#inicio">Início</a>
+        <a href="#sobre">Sobre o tema</a>
+        <a href="#problema">Problema ambiental</a>
+        <a href="#solucoes">Soluções</a>
+        <a href="#calculadora">Calculadora</a>
+        <a href="#conclusao">Conclusão</a>
+    </nav>
+
+    <!-- PÁGINA INICIAL -->
+    <section id="inicio">
+        <h2 class="section-title">🌿 Consumo consciente de água</h2>
+        <div class="img-container">
+            <!-- Imagem com texto alternativo descritivo para leitores de tela -->
+            <img src="https://placehold.co/900x300/e0f2e0/2c5e2e?text=Importância+da+Água+na+Agricultura" 
+                 alt="Ilustração de plantação sendo irrigada por gotejamento, gotas d'água e folhas verdes representando a sustentabilidade no campo.">
+        </div>
+        <p class="text-content"><strong>Futuro Verde</strong> é um projeto que conecta produção agrícola e preservação ambiental. A água é o recurso mais valioso para o campo e para a vida. Porém, o desperdício na agricultura e até mesmo nos hábitos diários compromete a segurança hídrica. Neste site, você entende dados sobre o consumo excessivo e descobre como pequenas atitudes geram grande impacto.</p>
+    </section>
+
+    <!-- SOBRE O TEMA (dados desperdício) -->
+    <section id="sobre">
+        <h2 class="section-title">💧 Sobre o tema: desperdício de água</h2>
+        <p class="text-content">A agricultura consome cerca de 70% da água doce disponível no mundo. Práticas ineficientes de irrigação, vazamentos e banhos longos contribuem para o esgotamento de rios e aquíferos. Um banho de 15 minutos com chuveiro convencional pode gastar mais de <strong>135 litros</strong>! Reduzir o tempo no chuveiro e adotar sistemas de reuso são atitudes urgentes.</p>
+        
+        <!-- Tabela explicativa: Gráficos e tabelas (produção autoral) -->
+        <h3>Consumo médio por atividade (litros)</h3>
+        <table class="data-table">
+            <thead>
+                <tr><th>Atividade</th><th>Consumo (litros)</th><th>Potencial de economia</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Banho (10 minutos)</td><td>90 L</td><td>Diminua para 5 min → 45 L</td></tr>
+                <tr><td>Irrigação por aspersão (1 hora)</td><td>~1000 L</td><td>Gotejamento reduz 50%</td></tr>
+                <tr><td>Vazamento em torneira</td><td>120 L/dia</td><td>Manutenção evita perda</td></tr>
+                <tr><td>Lavar calçada com mangueira</td><td>280 L</td><td>Vassoura + balde economiza 90%</td></tr>
+            </tbody>
+        </table>
+        <p class="text-content"><em>Fonte referencial: dados adaptados da Agência Nacional de Águas.</em></p>
+    </section>
+
+    <!-- PROBLEMA AMBIENTAL: impacto do consumo excessivo -->
+    <section id="problema">
+        <h2 class="section-title">⚠️ Impacto do consumo excessivo nos recursos hídricos</h2>
+        <div class="img-container">
+            <img src="https://placehold.co/800x250/ccf0cc/1f5430?text=Rio+com+baixo+nível+de+água" 
+                 alt="Imagem representativa de um leito de rio seco devido ao uso excessivo de água na agricultura e desperdício doméstico.">
+        </div>
+        <p class="text-content">O uso descontrolado de água no campo e nas cidades reduz a vazão de rios, afeta nascentes e prejudica a produção de alimentos no futuro. Sem práticas sustentáveis, a escassez hídrica impacta diretamente a agricultura familiar, o preço dos alimentos e a biodiversidade. Nosso objetivo é conscientizar a população em geral sobre a urgência de reduzir o desperdício, começando por hábitos simples como o tempo do banho.</p>
+    </section>
+
+    <!-- SOLUÇÕES SUSTENTÁVEIS + Calculadora de consumo (funcionalidade principal) -->
+    <section id="solucoes">
+        <h2 class="section-title">🚿 Soluções sustentáveis: teste seu banho</h2>
+        <p class="text-content">Pequenas atitudes geram grande economia. Uma das maiores fontes de desperdício no dia a dia é o banho demorado. Utilize a calculadora abaixo para saber quantos litros de água você consome a cada banho, e receba um alerta caso ultrapasse 90 litros (equivalente a 10 minutos de chuveiro aberto).</p>
+        
+        <!-- Calculadora interativa em JavaScript -->
+        <div class="calculator-box" id="calculadora">
+            <label>⏱️ Tempo de banho (minutos):</label>
+            <input type="number" id="tempoBanho" placeholder="Ex: 8" min="0" step="1" value="6">
+            <button id="calcularBtn">💧 Calcular consumo</button>
+            <div id="resultadoConsumo" class="result-area">
+                Aguardando cálculo...
+            </div>
+            <div id="alertaDiv"></div>
+            <p class="text-content" style="margin-top: 16px; font-size:0.9rem;"><small>*Cálculo baseado em chuveiro convencional: 9 litros por minuto (média brasileira).</small></p>
+        </div>
+
+        <h3>📌 Ideias práticas para reduzir o tempo no chuveiro</h3>
+        <ul class="tips-list">
+            <li>✔️ Desligue o chuveiro ao se ensaboar</li>
+            <li>✔️ Cronometre seu banho (máx 5 minutos)</li>
+            <li>✔️ Reaproveite a água da chuva para irrigação</li>
+            <li>✔️ Instale arejadores nas torneiras</li>
+            <li>✔️ Prefira chuveiros com vazão reduzida</li>
+        </ul>
+    </section>
+
+    <!-- Calculadora ou quiz / Conclusão (a estrutura mescla as últimas seções) -->
+    <section id="conclusao">
+        <h2 class="section-title">🌎 Conclusão: mude hábitos, preserve o futuro</h2>
+        <p class="text-content">A agricultura forte e sustentável depende da atitude de cada um. Reduzir o tempo do banho em poucos minutos por dia pode economizar milhares de litros de água por ano - água que pode ser utilizada para a produção de alimentos e manutenção dos ecossistemas. A tecnologia aliada à conscientização é o caminho. <strong>Futuro Verde</strong> acredita que com informações claras e uma calculadora simples, podemos inspirar cidadãos a respeitar os limites do planeta. </p>
+        <div class="img-container">
+            <img src="https://placehold.co/800x200/c6e6c6/1f4c2a?text=Pequenas+atitudes,+grandes+mudanças" 
+                 alt="Mãos segurando uma muda de planta e uma gota d'água, representando o equilíbrio entre produção e meio ambiente.">
+        </div>
+        <p class="text-content"><strong>Mensagem final:</strong> Cada gota conta. Seja você agricultor, estudante, ou parte da população geral, adotar medidas contra o desperdício de água fortalece o Agro e garante um futuro sustentável.</p>
+    </section>
+
+    <footer>
+        <p>Projeto desenvolvido para o Concurso Agrinho 2026 | Futuro Verde 🌿</p>
+        <p>Conscientização ambiental · Calculadora de consumo de água · Acessibilidade para todos</p>
+        <p>Tema: Agro forte, futuro sustentável: equilíbrio entre produção e meio ambiente</p>
+    </footer>
+</div>
+
+<script>
+    // FUNCIONALIDADE PRINCIPAL: CALCULADORA DE CONSUMO DE ÁGUA
+    // Multiplica os minutos por 9, exibe o total de litros.
+    // Se consumo > 90 litros, exibe alerta visual com sugestão de banho mais curto.
+
+    const calcularBtn = document.getElementById('calcularBtn');
+    const tempoInput = document.getElementById('tempoBanho');
+    const resultadoDiv = document.getElementById('resultadoConsumo');
+    const alertaDiv = document.getElementById('alertaDiv');
+
+    function calcularConsumoAgua() {
+        let minutos = parseFloat(tempoInput.value);
+        
+        // Validação: se não for número ou negativo
+        if (isNaN(minutos) || minutos < 0) {
+            resultadoDiv.innerHTML = "⛔ Por favor, insira um valor válido (minutos).";
+            alertaDiv.innerHTML = "";
+            return;
+        }
+        
+        // Se minutos for quebrado, permite, mas arredondamos na exibição
+        const consumoLitros = minutos * 9;
+        const consumoFormatado = consumoLitros.toFixed(1);
+        
+        resultadoDiv.innerHTML = `🚿 Seu banho de ${minutos} minuto(s) consumiu aproximadamente <strong>${consumoFormatado} litros</strong> de água.`;
+        
+        // Lógica de alerta visual se consumo > 90 litros
+        if (consumoLitros > 90) {
+            alertaDiv.innerHTML = `<div class="alert-warning">⚠️ <strong>Atenção!</strong> Seu consumo ultrapassou 90 litros. Tente reduzir o tempo do banho para menos de 10 minutos. Economize água para o futuro do campo e do planeta!</div>`;
+        } else {
+            alertaDiv.innerHTML = `<div class="alert-warning" style="background:#dff0df; border-left-color:#2c8c4a;">✅ Ótimo! Consumo abaixo de 90 litros. Continue cuidando da água e incentive práticas sustentáveis.</div>`;
+        }
+    }
+    
+    calcularBtn.addEventListener('click', calcularConsumoAgua);
+    
+    // Adicionar suporte para tecla Enter no campo
+    tempoInput.addEventListener('keypress', function(event) {
+        if (event.key === 'Enter') {
+            event.preventDefault();
+            calcularConsumoAgua();
+        }
+    });
+    
+    // Ao carregar, mostra um exemplo padrão
+    window.addEventListener('DOMContentLoaded', () => {
+        // Valor já existe (6 minutos), faz o cálculo inicial
+        calcularConsumoAgua();
+    });
+    
+    // ===================== ACESSIBILIDADE: Aumentar fonte =====================
+    const increaseBtn = document.getElementById('increaseFontBtn');
+    const resetFontBtn = document.getElementById('resetFontBtn');
+    
+    // Função para aumentar a fonte no body
+    increaseBtn.addEventListener('click', () => {
+        document.body.classList.add('font-large');
+    });
+    
+    resetFontBtn.addEventListener('click', () => {
+        document.body.classList.remove('font-large');
+    });
+    
+    // Textos alternativos já estão implementados nos atributos alt das imagens.
+    // Navegação simplificada: menu com links âncoras e estrutura semântica.
+    // Além disso, o layout é responsivo e possui contraste razoável.
+    
+    // Garantir foco visível para navegação por teclado (estilo adicional)
+    const styleFocus = document.createElement('style');
+    styleFocus.textContent = `a:focus, button:focus, input:focus { outline: 3px solid #0f6e3a; outline-offset: 2px; }`;
+    document.head.appendChild(styleFocus);
+</script>
+</body>
+</html>
